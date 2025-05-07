@@ -1,0 +1,147 @@
+:root{
+    --bg:navajowhite;
+    --card:beige;
+    --text:black;
+    --span:orangered;
+    --generic:white;
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    color: var(--span);
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+}
+
+header{
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1{
+    margin: 0.5rem;
+    font-size: 1.8rem;
+}
+
+header ul{
+    margin: 0.5rem;
+    display: flex;
+    padding: 0;
+    gap: 1rem;
+    list-style: none;
+}
+
+header a{
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+    transition: all background 1ms;
+}
+
+header a:hover{
+    color: var(--span);
+    transition: all background 1ms;
+}
+
+.container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.welp{
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background: var(--card);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.ord{
+    color:var(--text) ;
+}
+
+.ord span{
+    color: var(--span);
+}
+
+form label{
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input[type = "text" ],
+form input[type = "date" ],
+form input[type = "time" ]{
+    border: 2px solid orange;
+    padding: 6px;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+form input[type = "button"]{
+    padding: 10px 15px;
+    margin: 10px 5px;
+    background: var(--span);
+    color: var(--generic);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+button{
+    padding: 10px 15px;
+    margin: 10px 5px;
+    background: var(--span);
+    color: var(--generic);
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    header{
+        justify-self: center;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header ul {
+        flex-direction: row;
+        gap: 3rem;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
