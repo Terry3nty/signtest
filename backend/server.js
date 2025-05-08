@@ -5,8 +5,13 @@ const cors = require('cors');
 require ('dotenv').config();
 
 const app = express ();
-app.use(cors);
+app.use(cors());
 app.use(express.json());
+
+app.use((req, res, next) => {
+    console.log(`${req.method} request to ${req.url}`);
+    next();
+  });
 
 const eventRoutes = require('./routes/events');
 app.use('/api/events', eventRoutes);
