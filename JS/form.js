@@ -1,36 +1,36 @@
-document.querySelector('form').addEventListener('submit',function (e){
+document.querySelector('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
     const eventName = document.getElementById('haha').value.trim();
     const eventDate = document.getElementById('no').value;
     const eventTime = document.getElementById('clock').value;
 
-    if (!eventName || !eventDate || !eventTime){
-        alert('Please fill in all fields. ');
+    if (!eventName || !eventDate || !eventTime) {
+        alert('Please fill in all fields.');
         return;
     }
 
-
     const eventData = {
-        name: eventName,
+        title: eventName,
         date: eventDate,
         time: eventTime
     };
 
-    fetch('https://localhost:3000/events',{
+    fetch('http://localhost:5000/api/events', {
         method: 'POST',
-        headers:{ 'Content-Type': 'application/json'},
-        body:JSON.stringify(eventData)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(eventData)
     })
     .then(response => {
-        if (!response.ok) throw new Error("failed to save event");
+        if (!response.ok) throw new Error("Failed to save event");
         return response.json();
     })
-    .then(data =>{
-        alert("Event saved successfully!");
+    .then(data => {
+        alert("✅ Event saved successfully!");
         console.log(data);
     })
     .catch(err => {
         console.error(err);
-        alert("Error saving event.")
-    })
-    // alert ('Event recorded! (Data not yet saved - Backend integration incoming');
+        alert("❌ Error saving event.");
+    });
 });
