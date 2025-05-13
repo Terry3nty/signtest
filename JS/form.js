@@ -16,7 +16,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
         time: eventTime
     };
 
-    fetch('http://localhost:5000/api/events', {
+    fetch('https://zets-backend.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(eventData)

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:5000/api/events') // or http://localhost:5000 if you're not using HTTPS
+    fetch('https://zets-backend.onrender.com') // or http://localhost:5000 if you're not using HTTPS
         .then(response => {
             if (!response.ok) throw new Error("Failed to load events");
             return response.json();
